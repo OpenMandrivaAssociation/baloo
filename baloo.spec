@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	4.13.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -49,6 +49,7 @@ Baloo is a framework for searching and managing metadata.
 %package -n %{libbaloocore}
 Summary:	Shared library for Baloo
 Group:		System/Libraries
+Requires:	baloo = %{EVRD}
 
 %description -n %{libbaloocore}
 Shared library for Baloo.
@@ -136,5 +137,8 @@ based on Baloo.
 %makeinstall_std -C build
 
 %changelog
+* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-2
+- Add baloo to libbaloocore's Requires
+
 * Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
 - Initial Rosa package
