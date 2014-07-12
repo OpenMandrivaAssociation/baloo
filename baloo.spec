@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	4.13.2
-Release:	3
+Release:	5
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -13,6 +13,8 @@ BuildRequires:	xapian-devel
 BuildRequires:	pkgconfig(akonadi)
 BuildRequires:	pkgconfig(QJson)
 Requires:	kfilemetadata
+# (tpg) https://issues.openmandriva.org/show_bug.cgi?id=865
+Requires:	qt4-database-plugin-sqlite
 # For kio_timeline.so and tags.protocol
 Conflicts:	kdebase4-runtime < 1:4.13.0
 
