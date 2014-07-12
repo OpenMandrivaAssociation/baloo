@@ -140,11 +140,14 @@ based on Baloo.
 %makeinstall_std -C build
 
 %changelog
-* Fri Jun 21 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-3
+* Sat Jul 12 2014 Tomasz Paweł Gajc <tpgxyz@gmail.com> 4.13.2-5
+- Add requires on qt4-database-plugin-sqlite for OMV bug #865
+
+* Fri Jun 21 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-3
 - Add kfilemetadata to baloo's Requires
 
-* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-2
+* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-2
 - Add baloo to libbaloocore's Requires
 
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-1
 - Initial Rosa package
