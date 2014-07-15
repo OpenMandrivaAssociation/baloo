@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	4.13.2
-Release:	5
+Version:	4.13.3
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -140,6 +140,9 @@ based on Baloo.
 %makeinstall_std -C build
 
 %changelog
+* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
+- New version 4.13.3
+
 * Sat Jul 12 2014 Tomasz Paweł Gajc <tpgxyz@gmail.com> 4.13.2-5
 - Add requires on qt4-database-plugin-sqlite for OMV bug #865
 
