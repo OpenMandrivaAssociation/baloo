@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	4.13.2
-Release:	5
+Version:	4.13.3
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -140,11 +140,17 @@ based on Baloo.
 %makeinstall_std -C build
 
 %changelog
-* Fri Jun 21 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-3
+* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
+- New version 4.13.3
+
+* Sat Jul 12 2014 Tomasz Paweł Gajc <tpgxyz@gmail.com> 4.13.2-5
+- Add requires on qt4-database-plugin-sqlite for OMV bug #865
+
+* Fri Jun 21 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-3
 - Add kfilemetadata to baloo's Requires
 
-* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-2
+* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-2
 - Add baloo to libbaloocore's Requires
 
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.13.2-1
+* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-1
 - Initial Rosa package
