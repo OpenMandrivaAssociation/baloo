@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	4.13.3
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -116,6 +116,7 @@ Requires:	%{libbalooxapian} = %{EVRD}
 Requires:	%{libbaloopim} = %{EVRD}
 Requires:	%{libbaloofiles} = %{EVRD}
 Requires:	%{libbaloocore} = %{EVRD}
+Requires:	kfilemetadata-devel
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devbaloo}
@@ -140,6 +141,9 @@ based on Baloo.
 %makeinstall_std -C build
 
 %changelog
+* Wed Sep 17 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-2
+- Devel package requires kfilemetadata-devel
+
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
 
