@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	4.14.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -24,12 +24,6 @@ Baloo is a framework for searching and managing metadata.
 %files
 %{_sysconfdir}/dbus-1/system.d/org.kde.baloo.filewatch.conf
 %{_kde_bindir}/akonadi_baloo_indexer
-%{_kde_bindir}/baloo_file
-%{_kde_bindir}/baloo_file_cleaner
-%{_kde_bindir}/baloo_file_extractor
-%{_kde_bindir}/balooctl
-%{_kde_bindir}/baloosearch
-%{_kde_bindir}/balooshow
 %{_kde_datadir}/akonadi/agents/akonadibalooindexingagent.desktop
 %{_kde_iconsdir}/hicolor/128x128/apps/baloo.png
 %{_kde_libdir}/kde4/*.so
@@ -41,9 +35,29 @@ Baloo is a framework for searching and managing metadata.
 %{_kde_servicetypes}/baloosearchstore.desktop
 %{_datadir}/autostart/baloo_file.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
+
+#----------------------------------------------------------------------------
+%package kde4
+Summary:	Command line tools and DBus interface to Baloo 4.x
+Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
+
+%description kde4
+Command line tools and DBus interface to Baloo 4.x
+
+By default, OpenMandriva Lx uses command line tools and DBus interfaces
+from Baloo 5.x -- install this package if you don't need Baloo 5.x and
+don't want to pull in its dependencies on KDE Frameworks 5.
+
+%files kde4
+%{_kde_bindir}/baloo_file
+%{_kde_bindir}/baloo_file_cleaner
+%{_kde_bindir}/baloo_file_extractor
+%{_kde_bindir}/balooctl
+%{_kde_bindir}/baloosearch
+%{_kde_bindir}/balooshow
 %{_datadir}/dbus-1/system-services/org.kde.baloo.filewatch.service
 %{_datadir}/polkit-1/actions/org.kde.baloo.filewatch.policy
-
 #----------------------------------------------------------------------------
 
 %define baloocore_major 4
@@ -155,32 +169,3 @@ based on Baloo.
 
 %install
 %makeinstall_std -C build
-
-%changelog
-* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.3-1
-- New version 4.14.3
-
-* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.2-1
-- New version 4.14.2
-
-* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
-- New version 4.14.1
-- New library package libbalooqueryparser
-
-* Wed Sep 17 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-2
-- Devel package requires kfilemetadata-devel
-
-* Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
-- New version 4.13.3
-
-* Sat Jul 12 2014 Tomasz Paweł Gajc <tpgxyz@gmail.com> 4.13.2-5
-- Add requires on qt4-database-plugin-sqlite for OMV bug #865
-
-* Fri Jun 21 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-3
-- Add kfilemetadata to baloo's Requires
-
-* Mon Jun 16 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-2
-- Add baloo to libbaloocore's Requires
-
-* Wed Jun 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.2-1
-- Initial Rosa package
