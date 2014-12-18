@@ -92,6 +92,21 @@ Shared library for Baloo.
 
 #----------------------------------------------------------------------------
 
+%define balooqueryparser_major 4
+%define libbalooqueryparser %mklibname balooqueryparser %{balooqueryparser_major}
+
+%package -n %{libbalooqueryparser}
+Summary:	Shared library for Baloo
+Group:		System/Libraries
+
+%description -n %{libbalooqueryparser}
+Shared library for Baloo.
+
+%files -n %{libbalooqueryparser}
+%{_kde_libdir}/libbalooqueryparser.so.%{balooqueryparser_major}*
+
+#----------------------------------------------------------------------------
+
 %define balooxapian_major 4
 %define libbalooxapian %mklibname balooxapian %{balooxapian_major}
 
@@ -112,10 +127,11 @@ Shared library for Baloo.
 %package -n %{devbaloo}
 Summary:	Devel stuff for Baloo
 Group:		Development/KDE and Qt
-Requires:	%{libbalooxapian} = %{EVRD}
-Requires:	%{libbaloopim} = %{EVRD}
-Requires:	%{libbaloofiles} = %{EVRD}
 Requires:	%{libbaloocore} = %{EVRD}
+Requires:	%{libbaloofiles} = %{EVRD}
+Requires:	%{libbaloopim} = %{EVRD}
+Requires:	%{libbalooqueryparser} = %{EVRD}
+Requires:	%{libbalooxapian} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devbaloo}
