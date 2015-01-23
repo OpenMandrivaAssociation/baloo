@@ -1,7 +1,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	4.14.3
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -34,7 +34,6 @@ Baloo is a framework for searching and managing metadata.
 %{_kde_services}/*.protocol
 %{_kde_servicetypes}/baloosearchstore.desktop
 %{_datadir}/autostart/baloo_file.desktop
-%{_datadir}/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 
 #----------------------------------------------------------------------------
 %package kde4
@@ -58,6 +57,7 @@ don't want to pull in its dependencies on KDE Frameworks 5.
 %{_kde_bindir}/balooshow
 %{_datadir}/dbus-1/system-services/org.kde.baloo.filewatch.service
 %{_datadir}/polkit-1/actions/org.kde.baloo.filewatch.policy
+%{_datadir}/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 #----------------------------------------------------------------------------
 
 %define baloocore_major 4
