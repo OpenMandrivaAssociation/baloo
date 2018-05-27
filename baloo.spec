@@ -3,7 +3,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 
 Summary:	Baloo is a framework for searching and managing metadata
-Name:		baloo5
+Name:		baloo
 Version:	5.46.0
 Release:	1
 License:	GPLv2+
