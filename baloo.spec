@@ -4,7 +4,7 @@
 
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	5.46.0
+Version:	5.47.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -37,12 +37,13 @@ BuildRequires:	cmake(KF5FileMetaData)
 BuildRequires:	lmdb-devel
 # (tpg) https://issues.openmandriva.org/show_bug.cgi?id=865
 Requires:	qt5-database-plugin-sqlite
-Requires:	kfilemetadata5
+Requires:	kfilemetadata
+%rename	%{name}5
 
 %description
 Baloo is a framework for searching and managing metadata.
 
-%files -f baloo_file5.lang,baloo_file_extractor5.lang,balooctl5.lang,baloomonitorplugin.lang,baloosearch5.lang,balooshow5.lang,kio5_baloosearch.lang,kio5_tags.lang,kio5_timeline.lang
+%files -f baloo_file5.lang -f baloo_file_extractor5.lang -f balooctl5.lang -f baloomonitorplugin.lang -f baloosearch5.lang -f balooshow5.lang -f kio5_baloosearch.lang -f kio5_tags.lang -f kio5_timeline.lang -f baloodb5.lang -f balooengine5.lang
 %{_sysconfdir}/xdg/baloo.categories
 %{_sysconfdir}/xdg/autostart/baloo_file.desktop
 %{_bindir}/baloo_file
@@ -50,6 +51,7 @@ Baloo is a framework for searching and managing metadata.
 %{_bindir}/balooctl
 %{_bindir}/baloosearch
 %{_bindir}/balooshow
+%{_datadir}/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 %{_datadir}/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 %{_datadir}/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 %{_datadir}/dbus-1/interfaces/org.kde.baloo.main.xml
@@ -121,6 +123,7 @@ based on Baloo.
 %files -n %{devbaloo}
 %{_includedir}/KF5/Baloo/
 %{_includedir}/KF5/baloo_version.h
+%{_libdir}/qt5/mkspecs/modules/qt_Baloo.pri
 %{_libdir}/*.so
 %{_libdir}/cmake/KF5Baloo
 %{_libdir}/pkgconfig/Baloo.pc
@@ -141,6 +144,8 @@ based on Baloo.
 %find_lang baloo_file5
 %find_lang baloo_file_extractor5
 %find_lang balooctl5
+%find_lang baloodb5
+%find_lang balooengine5
 %find_lang baloomonitorplugin
 %find_lang baloosearch5
 %find_lang balooshow5
