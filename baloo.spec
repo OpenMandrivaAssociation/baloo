@@ -45,7 +45,7 @@ Requires:	kfilemetadata
 %description
 Baloo is a framework for searching and managing metadata.
 
-%files -f baloo_file5.lang -f baloo_file_extractor5.lang -f balooctl5.lang -f baloomonitorplugin.lang -f baloosearch5.lang -f balooshow5.lang -f kio5_baloosearch.lang -f kio5_tags.lang -f kio5_timeline.lang -f baloodb5.lang -f balooengine5.lang
+%files -f baloo_file5.lang,baloo_file_extractor5.lang,balooctl5.lang,baloomonitorplugin.lang,baloosearch5.lang,balooshow5.lang,kio5_baloosearch.lang,kio5_tags.lang,kio5_timeline.lang,baloodb5.lang,balooengine5.lang
 %{_sysconfdir}/xdg/baloo.categories
 %{_sysconfdir}/xdg/autostart/baloo_file.desktop
 %{_bindir}/baloo_file
