@@ -10,6 +10,7 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/baloo-%{version}.tar.xz
+Patch0:		baloo-5.54.0-default-off.patch
 Patch1:		baloo-5.13.0-pkgconfig.patch
 BuildRequires:	pkgconfig(QJson)
 BuildRequires:	pkgconfig(Qt5Core)
@@ -133,8 +134,7 @@ based on Baloo.
 #--------------------------------------------------------------------
 
 %prep
-%setup -qn baloo-%{version}
-%apply_patches
+%autosetup -p1 -n baloo-%{version}
 %cmake_kde5
 
 %build
