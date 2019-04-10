@@ -4,8 +4,8 @@
 
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	5.56.0
-Release:	2
+Version:	5.57.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -38,6 +38,8 @@ BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5FileMetaData)
 BuildRequires:	lmdb-devel
+# For QCH format docs
+BuildRequires: qt5-assistant
 # (tpg) https://issues.openmandriva.org/show_bug.cgi?id=865
 Requires:	qt5-database-plugin-sqlite
 Requires:	kfilemetadata
@@ -131,6 +133,17 @@ based on Baloo.
 %{_libdir}/cmake/KF5Baloo
 %{_libdir}/pkgconfig/Baloo.pc
 
+#--------------------------------------------------------------------
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devbaloo} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
 #--------------------------------------------------------------------
 
 %prep
