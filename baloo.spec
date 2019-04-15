@@ -39,6 +39,7 @@ BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5FileMetaData)
 BuildRequires:	lmdb-devel
 # For QCH format docs
+BuildRequires: doxygen
 BuildRequires: qt5-assistant
 # (tpg) https://issues.openmandriva.org/show_bug.cgi?id=865
 Requires:	qt5-database-plugin-sqlite
