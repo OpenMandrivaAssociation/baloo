@@ -4,7 +4,7 @@
 
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	5.64.0
+Version:	5.65.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -156,6 +156,10 @@ Developer documentation for %{name} for use with Qt Assistant
 
 %install
 %ninja_install -C build
+
+# FIXME workaround for gdb hang while trying to extract debuginfo
+# from baloo_file_extractor with gdb 8.3.1-3 on x86_64 and znver1
+strip --strip-unneeded %{buildroot}%{_bindir}/baloo_file_extractor
 
 %find_lang baloo_file5
 %find_lang baloo_file_extractor5
