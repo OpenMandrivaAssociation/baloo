@@ -1,0 +1,12 @@
+diff -up baloo-5.67.0/src/lib/baloosettings.kcfg.omv~ baloo-5.67.0/src/lib/baloosettings.kcfg
+--- baloo-5.67.0/src/lib/baloosettings.kcfg.omv~	2020-02-08 19:39:23.074729930 +0100
++++ baloo-5.67.0/src/lib/baloosettings.kcfg	2020-02-08 19:39:30.212730245 +0100
+@@ -9,7 +9,7 @@
+   <group name="Basic Settings">
+     <entry name="indexingEnabled" key="Indexing-Enabled" type="Bool">
+       <label>Indexing-Enabled</label>
+-      <default>true</default>
++      <default>false</default>
+     </entry>
+   </group>
+   <group name="General">
