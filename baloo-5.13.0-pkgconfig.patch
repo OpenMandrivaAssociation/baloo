@@ -1,11 +1,11 @@
-diff -urN baloo-5.13.0/src/lib/Baloo.pc.cmake baloo-5.13.0-patched/src/lib/Baloo.pc.cmake
---- baloo-5.13.0/src/lib/Baloo.pc.cmake	2015-08-04 20:42:23.000000000 +1000
-+++ baloo-5.13.0-patched/src/lib/Baloo.pc.cmake	2015-08-13 04:16:30.988295766 +1000
-@@ -8,5 +8,5 @@
- URL: http://www.kde.org
+diff -up baloo-5.68.0/src/lib/Baloo.pc.cmake.2~ baloo-5.68.0/src/lib/Baloo.pc.cmake
+--- baloo-5.68.0/src/lib/Baloo.pc.cmake.2~	2020-03-08 22:48:30.381138752 +0100
++++ baloo-5.68.0/src/lib/Baloo.pc.cmake	2020-03-08 23:13:07.768203898 +0100
+@@ -8,5 +8,5 @@ Description: Baloo is a file indexing an
+ URL: https://www.kde.org
  Requires: Qt5Core
  Version: ${BALOO_VERSION_STRING}
 -Libs: -L${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR} -lKF5Baloo
 -Cflags: -I${CMAKE_INSTALL_PREFIX}/${KF5_INCLUDE_INSTALL_DIR}/Baloo
-+Libs: -L${LIB_INSTALL_DIR} -lKF5Baloo
++Libs: -lKF5Baloo
 +Cflags: -I${KF5_INCLUDE_INSTALL_DIR}/Baloo
