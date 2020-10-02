@@ -5,7 +5,7 @@
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
 Version:	5.74.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
