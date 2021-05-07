@@ -4,8 +4,8 @@
 
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	5.81.0
-Release:	2
+Version:	5.82.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -53,7 +53,6 @@ Baloo is a framework for searching and managing metadata.
 %{_datadir}/qlogging-categories5/baloo.*categories
 %{_sysconfdir}/xdg/autostart/baloo_file.desktop
 %{_bindir}/baloo_file
-%{_bindir}/baloo_file_extractor
 %{_bindir}/balooctl
 %{_bindir}/baloosearch
 %{_bindir}/balooshow
@@ -70,6 +69,10 @@ Baloo is a framework for searching and managing metadata.
 %{_datadir}/kservices5/tags.protocol
 %{_datadir}/kservices5/timeline.protocol
 %{_libdir}/qt5/qml/org/kde/baloo
+%{_bindir}/baloo_file_extractor
+%{_prefix}/lib/systemd/user/kde-baloo.service
+%{_libdir}/libexec/baloo_file
+%{_libdir}/libexec/baloo_file_extractor
 
 #----------------------------------------------------------------------------
 
@@ -155,10 +158,6 @@ Developer documentation for %{name} for use with Qt Assistant
 
 %install
 %ninja_install -C build
-
-# FIXME workaround for gdb hang while trying to extract debuginfo
-# from baloo_file_extractor with gdb 8.3.1-3 on x86_64 and znver1
-strip --strip-unneeded %{buildroot}%{_bindir}/baloo_file_extractor
 
 %find_lang baloo_file5
 %find_lang balooctl5
