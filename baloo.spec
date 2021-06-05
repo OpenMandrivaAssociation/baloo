@@ -4,7 +4,7 @@
 
 Summary:	Baloo is a framework for searching and managing metadata
 Name:		baloo
-Version:	5.82.0
+Version:	5.83.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -49,7 +49,7 @@ Requires:	kfilemetadata
 %description
 Baloo is a framework for searching and managing metadata.
 
-%files -f baloo_file5.lang -f balooctl5.lang -f baloomonitorplugin.lang -f baloosearch5.lang -f balooshow5.lang -f kio5_baloosearch.lang -f kio5_tags.lang -f kio5_timeline.lang -f baloodb5.lang -f balooengine5.lang
+%files -f balooctl5.lang -f baloosearch5.lang -f balooshow5.lang -f kio5_baloosearch.lang -f kio5_tags.lang -f kio5_timeline.lang -f baloodb5.lang -f balooengine5.lang
 %{_datadir}/qlogging-categories5/baloo.*categories
 %{_sysconfdir}/xdg/autostart/baloo_file.desktop
 %{_bindir}/baloo_file
@@ -65,9 +65,6 @@ Baloo is a framework for searching and managing metadata.
 %{_libdir}/qt5/plugins/kf5/kio/baloosearch.so
 %{_libdir}/qt5/plugins/kf5/kio/tags.so
 %{_libdir}/qt5/plugins/kf5/kio/timeline.so
-%{_datadir}/kservices5/baloosearch.protocol
-%{_datadir}/kservices5/tags.protocol
-%{_datadir}/kservices5/timeline.protocol
 %{_libdir}/qt5/qml/org/kde/baloo
 %{_bindir}/baloo_file_extractor
 %{_prefix}/lib/systemd/user/kde-baloo.service
@@ -159,11 +156,9 @@ Developer documentation for %{name} for use with Qt Assistant
 %install
 %ninja_install -C build
 
-%find_lang baloo_file5
 %find_lang balooctl5
 %find_lang baloodb5
 %find_lang balooengine5
-%find_lang baloomonitorplugin
 %find_lang baloosearch5
 %find_lang balooshow5
 %find_lang kio5_baloosearch
